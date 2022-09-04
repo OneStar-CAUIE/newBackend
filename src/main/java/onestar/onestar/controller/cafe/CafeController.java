@@ -26,9 +26,15 @@ public class CafeController {
         return cafeService.findAll();
     }
 
+<<<<<<< HEAD
     @GetMapping("/recommendationCafe")
     public String recommend(){
         return "cafeRecommend";
+=======
+    @GetMapping("/recommendedCafe")
+    public String cafeList(){
+        return "";
+>>>>>>> c1a3f52849a2ac7ff248e0d4ab818352c8faf2dc
     }
 
 
