@@ -42,7 +42,7 @@ public class StudyCafeService {
         */
 
 
-        for(int i=0; i<studyCafeData.size(); i++){
+        for(int i=1; i<studyCafeData.size(); i++){
             List<String> tmp = studyCafeData.get(i);
             System.out.println(tmp);
             System.out.println(tmp.get(1) +"," + tmp.get(2) + "," + tmp.get(3) + "," + tmp.get(4));
