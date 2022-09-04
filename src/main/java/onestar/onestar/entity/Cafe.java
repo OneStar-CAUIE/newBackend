@@ -25,8 +25,8 @@ public class Cafe {
     private double price;
 
     // 키워드
-    private int Coffee;
-    private int Beverage;
+    private int coffee;
+    private int beverage;
     private int interior;
     private int talk;
     private int dessert;

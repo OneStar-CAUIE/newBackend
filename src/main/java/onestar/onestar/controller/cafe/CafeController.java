@@ -6,9 +6,7 @@ import onestar.onestar.service.CafeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,20 +21,15 @@ public class CafeController {
     }
 
     @ResponseBody
-    @GetMapping("/Cafe/list")
+    @GetMapping("/list")
     public List<Cafe> cafe(){
         return cafeService.findAll();
     }
 
-    @GetMapping("/recommendedCafe")
-    public String cafeList(){
-        return "hashTag";
+    @GetMapping("/recommendationCafe")
+    public String recommend(){
+        return "cafeRecommend";
     }
 
-    @GetMapping("/hashtag")
-    public String hashTag(Model model){
-        model.addAttribute("hash", new CafeHashDto());
-        return "hashTag";
 
-    }
 }

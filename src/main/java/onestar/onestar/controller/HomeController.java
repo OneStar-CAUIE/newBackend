@@ -44,10 +44,6 @@ public class HomeController {
         return studyCafeService.findAll();
     }
 
-    @GetMapping("/studyCafe/map")
-    public String map(){
-        return "map";
-    }
 
 
 }
