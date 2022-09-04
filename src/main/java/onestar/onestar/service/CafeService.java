@@ -43,13 +43,16 @@ public class CafeService {
         */
 
 
-        for(List<String> tmp : cafeData){
+        for(int i=1; i<cafeData.size(); i++){
+            List<String> tmp = cafeData.get(i);
+            System.out.println(tmp.get(2).getClass().getClass());
             Cafe cafe = new Cafe();
             cafe.setName(tmp.get(1));
-            cafe.setAddress(tmp.get(2));
-            cafe.setDate(tmp.get(3).
+            cafe.setRate(Double.parseDouble(tmp.get(2)));
+            cafe.setAddress(tmp.get(3));
+            cafe.setDate(tmp.get(4).
                     replace("[", "").replace("]","").replace("'", ""));
-            cafe.setTime(tmp.get(4).
+            cafe.setTime(tmp.get(5).
                     replace("[", "").replace("]",""));
             cafeRepo.save(cafe);
 

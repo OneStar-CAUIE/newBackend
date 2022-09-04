@@ -45,7 +45,4 @@ public class Cafe {
     private int chair;
     private int tea;
 
-
-
-
 }

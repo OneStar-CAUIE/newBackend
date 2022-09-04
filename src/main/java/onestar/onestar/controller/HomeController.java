@@ -1,11 +1,10 @@
 package onestar.onestar.controller;
 
 import onestar.onestar.entity.StudyCafe;
-import onestar.onestar.repository.StudyCafeRepository;
+import onestar.onestar.service.CafeService;
 import onestar.onestar.service.StudyCafeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,10 +16,12 @@ import java.util.List;
 public class HomeController {
 
     private StudyCafeService studyCafeService;
+    private CafeService cafeService;
 
     @Autowired
-    public HomeController(StudyCafeService studyCafeService){
+    public HomeController(StudyCafeService studyCafeService, CafeService cafeService){
         this.studyCafeService = studyCafeService;
+        this.cafeService = cafeService;
     }
 
 
@@ -30,13 +31,12 @@ public class HomeController {
         if(studyCafeService.countStudyCafe() == 0){
             studyCafeService.insert();
         }
-        return "index";
+        if(cafeService.countCafe() == 0){
+            cafeService.insert();
+        }
+        return "home";
     }
 
-    @GetMapping("/Cafe")
-    public String cafe(){
-        return "cafe";
-    }
 
     @ResponseBody
     @GetMapping("/studyCafe/list")
@@ -48,4 +48,6 @@ public class HomeController {
     public String map(){
         return "map";
     }
+
+
 }
