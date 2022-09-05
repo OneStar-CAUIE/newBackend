@@ -29,7 +29,7 @@ public class RecommendService {
     }
 
     public void insert() {
-        CSVReader csvReader = new CSVReader("C:\\Users\\82107\\Desktop\\Database\\recommend_cafe_for_study.csv");
+        CSVReader csvReader = new CSVReader("C:\\Users\\82107\\Desktop\\Database\\cafe_cau_for_database.csv");
 
         List<List<String>> recommendData = csvReader.readCSV();
 

@@ -38,56 +38,11 @@
     <div class="row gx-lg-3">
 
       <ul class="list-group">
-        <li class="list-group-item">
-          <p class="fs-4 fw-bold">cafe 1:</p><br>
-          <p class="fs-6">rank:</p>
-          <p class="fs-6">location:</p>
-        </li>
-        <li class="list-group-item">
-          <p class="fs-4 fw-bold">cafe 2:</p><br>
-          <p class="fs-6">rank:</p>
-          <p class="fs-6">location:</p>
-        </li>
-        <li class="list-group-item">
-          <p class="fs-4 fw-bold">cafe 3:</p><br>
-          <p class="fs-6">rank:</p>
-          <p class="fs-6">location:</p>
-        </li>
-        <li class="list-group-item">
-          <p class="fs-4 fw-bold">cafe 4:</p><br>
-          <p class="fs-6">rank:</p>
-          <p class="fs-6">location:</p>
-        </li>
-        <li class="list-group-item">
-          <p class="fs-4 fw-bold">cafe 5:</p><br>
-          <p class="fs-6">rank:</p>
-          <p class="fs-6">location:</p>
-        </li>
-        <li class="list-group-item">
-          <p class="fs-4 fw-bold">cafe 6:</p><br>
-          <p class="fs-6">rank:</p>
-          <p class="fs-6">location:</p>
-        </li>
-        <li class="list-group-item">
-          <p class="fs-4 fw-bold">cafe 7:</p><br>
-          <p class="fs-6">rank:</p>
-          <p class="fs-6">location:</p>
-        </li>
-        <li class="list-group-item">
-          <p class="fs-4 fw-bold">cafe 8:</p><br>
-          <p class="fs-6">rank:</p>
-          <p class="fs-6">location:</p>
-        </li>
-        <li class="list-group-item">
-          <p class="fs-4 fw-bold">cafe 9:</p><br>
-          <p class="fs-6">rank:</p>
-          <p class="fs-6">location:</p>
-        </li>
-        <li class="list-group-item">
-          <p class="fs-4 fw-bold">cafe 10:</p><br>
-          <p class="fs-6">rank:</p>
-          <p class="fs-6">location:</p>
-        </li>
+        <th:block th:each="cafe : ${list}">
+            <p class="fs-4 fw-bold"> <li th:text="'cafe'+ ${cafe.id}"></li>:</p><br>
+            <p class="fs-6"><li th:text="'rate : '+ ${cafe.rate}"></li></p>
+            <p class="fs-6"><li th:text="'location : '+ ${cafe.location}"></li></p>
+        </th:block>
 
       </ul>
       <br></br>
