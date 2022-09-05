@@ -33,27 +33,26 @@ public class CafeService {
 
         List<List<String>> cafeData = csvReader.readCSV();
 
-        /*
-        for(List<String> data :studyCafeData){
-            System.out.println(data.get(1));
-            System.out.println(data.get(2));
-            System.out.println(data.get(3));
-        }
-
-        */
-
-
         for(int i=1; i<cafeData.size(); i++){
             List<String> tmp = cafeData.get(i);
-            System.out.println(tmp.get(2).getClass().getClass());
             Cafe cafe = new Cafe();
             cafe.setName(tmp.get(1));
             cafe.setRate(Double.parseDouble(tmp.get(2)));
             cafe.setAddress(tmp.get(3));
-            cafe.setDate(tmp.get(4).
-                    replace("[", "").replace("]","").replace("'", ""));
-            cafe.setTime(tmp.get(5).
-                    replace("[", "").replace("]",""));
+            if(tmp.get(4).equals("[]")) {
+                cafe.setDate("정보없음");
+            }
+            else {
+                cafe.setDate(tmp.get(4).
+                        replace("[", "").replace("]","").replace("'", ""));
+            }
+            if(tmp.get(5).equals("[]")) {
+                cafe.setTime("정보없음");
+            }
+            else {
+                cafe.setTime(tmp.get(5).
+                        replace("[", "").replace("]",""));
+            }
             cafeRepo.save(cafe);
 
         }

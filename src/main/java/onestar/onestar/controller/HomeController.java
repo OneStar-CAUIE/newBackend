@@ -1,10 +1,8 @@
 package onestar.onestar.controller;
 
+import onestar.onestar.dto.MapDto;
 import onestar.onestar.entity.StudyCafe;
-import onestar.onestar.service.CafeRecommendService;
-import onestar.onestar.service.CafeService;
-import onestar.onestar.service.CauRecommendService;
-import onestar.onestar.service.StudyCafeService;
+import onestar.onestar.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,6 +45,7 @@ public class HomeController {
         }
         if(cafeRecommendService.countCafeRecommend()==0){
             cafeRecommendService.insert();
+
         }
         return "home";
     }

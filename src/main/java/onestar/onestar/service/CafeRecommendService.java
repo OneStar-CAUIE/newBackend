@@ -26,6 +26,10 @@ public class CafeRecommendService {
         return cafeRecommendRepository.count();
     }
 
+    public CafeRecommend findbyName(String name){
+        return cafeRecommendRepository.findByName(name);
+    }
+
     public void insert() {
         CSVReader csvReader = new CSVReader("C:\\Users\\82107\\Desktop\\Database\\cafe_recommended_10.csv");
 

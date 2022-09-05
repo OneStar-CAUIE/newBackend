@@ -1,7 +1,9 @@
 package onestar.onestar.controller.studyCafe;
 
 
+import onestar.onestar.dto.MapDto;
 import onestar.onestar.entity.StudyCafe;
+import onestar.onestar.service.MapDtoService;
 import onestar.onestar.service.StudyCafeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +36,9 @@ public class StudyCafeController {
 
     @GetMapping("/map")
     public String map(){
+        //MapDtoService mapDtoService = new MapDtoService();
+        //List<MapDto> mapDtoList = mapDtoService.insert();
+        //model.addAttribute("mapDto", mapDtoList);
         return "map";
     }
 

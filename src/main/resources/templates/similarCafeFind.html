@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<form th:action="@{/OneStar/Cafe/recommend}" th:object="${data}" method="post">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,6 +15,7 @@
   <link href="/css/cafeRecommend.css" rel="stylesheet" />
 </head>
 <body>
+<
 <!-- Responsive navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container px-lg-5">
@@ -35,12 +37,11 @@
     <div class="col-lg-2 col-xxl-12 mb-2">
       <div class="card bg-light border-0 h-100">
         <div class="card-body text-center p-5 p-lg-0 pt-2 pt-lg-3 pb-lg-3">
-          <select name="cafe" >
-            <option value="none">카페선택</option>
-            <option value="cafe1">카페이름1</option>
-            <option value="cafe2">카페이름2</option>
-            <option value="cafe3">카페이름3</option>
-            <option value="cafe4">카페이름4</option>
+          <select name="cafe" th:name = "data">
+            <option value="선택">카페선택</option>
+            <option th:each="val : ${cafe}"
+                    th:value="${val?.name}"
+                    th:utext="${val?.name}"></option>
           </select>
         </div>
       </div>
@@ -49,7 +50,7 @@
     <div class="col-lg-2 col-xxl-12 mb-2">
       <div class="card bg-primary border-0 h-100">
         <div class="card-body text-center p-0 p-lg-0 pt-0 pt-lg-2 pb-lg-2">
-          <label class="fs-6"><input type="button"> 비슷한 카페 결과 보기</label>
+          <label class="fs-6"><button type="submit"> 비슷한 카페 결과 보기</button></label>
         </div>
       </div>
     </div>
@@ -134,4 +135,5 @@
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 </body>
+</form>
 </html>

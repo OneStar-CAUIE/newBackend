@@ -49,10 +49,20 @@ public class StudyCafeService {
             StudyCafe studyCafe = new StudyCafe();
             studyCafe.setName(tmp.get(1));
             studyCafe.setAddress(tmp.get(2));
-            studyCafe.setDate(tmp.get(3).
-                    replace("[", "").replace("]","").replace("'", ""));
-            studyCafe.setTime(tmp.get(4).
-                   replace("[", "").replace("]",""));
+            if(tmp.get(3).equals("[]")) {
+                studyCafe.setDate("정보없음");
+            }
+            else {
+                studyCafe.setDate(tmp.get(3).
+                        replace("[", "").replace("]","").replace("'", ""));
+            }
+            if(tmp.get(4).equals("[]")) {
+                studyCafe.setTime("정보없음");
+            }
+            else {
+                studyCafe.setTime(tmp.get(4).
+                        replace("[", "").replace("]",""));
+            }
             studyCafeRepo.save(studyCafe);
 
         }
