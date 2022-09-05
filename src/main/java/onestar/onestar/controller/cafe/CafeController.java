@@ -1,6 +1,5 @@
 package onestar.onestar.controller.cafe;
 
-import onestar.onestar.dto.CafeHashDto;
 import onestar.onestar.entity.Cafe;
 import onestar.onestar.service.CafeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +19,15 @@ public class CafeController {
         this.cafeService = cafeService;
     }
 
-    @ResponseBody
-    @GetMapping("/list")
-    public List<Cafe> cafe(){
-        return cafeService.findAll();
+
+    @GetMapping("/recommend")
+    public String cafe(Model model){
+        List<Cafe> cafeList = cafeService.findAll();
+        model.addAttribute("cafe", cafeList);
+        return "similarCafeFind";
     }
+
+
 
 
 
