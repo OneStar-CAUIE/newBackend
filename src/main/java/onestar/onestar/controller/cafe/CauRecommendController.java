@@ -1,7 +1,7 @@
-package onestar.onestar.controller.cafe.recommend;
+package onestar.onestar.controller.cafe;
 
-import onestar.onestar.entity.Recommend;
-import onestar.onestar.service.RecommendService;
+import onestar.onestar.entity.CauRecommend;
+import onestar.onestar.service.CauRecommendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,25 +13,25 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/OneStar/Cafe/Recommend")
-public class RecommendController {
-    private RecommendService recommendService;
+public class CauRecommendController {
+    private CauRecommendService cauRecommendService;
 
     @Autowired
-    public RecommendController(RecommendService recommendService){
-        this.recommendService = recommendService;
+    public CauRecommendController(CauRecommendService cauRecommendService){
+        this.cauRecommendService = cauRecommendService;
     }
 
     @GetMapping("")
     public String recommendList(Model model){
-        List<Recommend> list = recommendService.findAll();
+        List<CauRecommend> list = cauRecommendService.findAll();
         model.addAttribute("list", list);
-        return "cafeRecommend";
+        return "cauRecommend";
     }
 
     @ResponseBody
     @GetMapping("/list")
-    public List<Recommend> list(){
-        return recommendService.findAll();
+    public List<CauRecommend> list(){
+        return cauRecommendService.findAll();
     }
 
 }

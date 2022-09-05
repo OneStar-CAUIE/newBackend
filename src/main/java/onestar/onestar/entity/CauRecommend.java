@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Recommend {
+public class CauRecommend {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

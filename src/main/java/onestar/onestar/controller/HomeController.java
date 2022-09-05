@@ -1,8 +1,9 @@
 package onestar.onestar.controller;
 
 import onestar.onestar.entity.StudyCafe;
+import onestar.onestar.service.CafeRecommendService;
 import onestar.onestar.service.CafeService;
-import onestar.onestar.service.RecommendService;
+import onestar.onestar.service.CauRecommendService;
 import onestar.onestar.service.StudyCafeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,13 +19,17 @@ public class HomeController {
 
     private StudyCafeService studyCafeService;
     private CafeService cafeService;
-    private RecommendService recommendService;
+    private CauRecommendService cauRecommendService;
+    private CafeRecommendService cafeRecommendService;
 
     @Autowired
-    public HomeController(StudyCafeService studyCafeService, CafeService cafeService, RecommendService recommendService){
+    public HomeController(
+            StudyCafeService studyCafeService, CafeService cafeService, CauRecommendService cauRecommendService,
+            CafeRecommendService cafeRecommendService){
         this.studyCafeService = studyCafeService;
         this.cafeService = cafeService;
-        this.recommendService = recommendService;
+        this.cauRecommendService = cauRecommendService;
+        this.cafeRecommendService = cafeRecommendService;
     }
 
 
@@ -37,8 +42,11 @@ public class HomeController {
         if(cafeService.countCafe() == 0){
             cafeService.insert();
         }
-        if(recommendService.countRecommend() == 0){
-            recommendService.insert();
+        if(cauRecommendService.countRecommend() == 0){
+            cauRecommendService.insert();
+        }
+        if(cafeRecommendService.countCafeRecommend()==0){
+            cafeRecommendService.insert();
         }
         return "home";
     }
