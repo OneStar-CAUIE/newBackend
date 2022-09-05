@@ -26,14 +26,6 @@ public class CafeController {
         return cafeService.findAll();
     }
 
-    @GetMapping("/recommendationCafe")
-    public String recommend() {
-        return "cafeRecommend";
-
-    }
-    @GetMapping("/recommendedCafe")
-    public void cafeList(){
-    }
 
 
 }

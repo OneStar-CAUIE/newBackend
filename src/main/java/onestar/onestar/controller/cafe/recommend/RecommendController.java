@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -25,6 +26,12 @@ public class RecommendController {
         List<Recommend> list = recommendService.findAll();
         model.addAttribute("list", list);
         return "cafeRecommend";
+    }
+
+    @ResponseBody
+    @GetMapping("/list")
+    public List<Recommend> list(){
+        return recommendService.findAll();
     }
 
 }

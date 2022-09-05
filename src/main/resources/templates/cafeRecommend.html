@@ -38,11 +38,15 @@
     <div class="row gx-lg-3">
 
       <ul class="list-group">
-        <th:block th:each="cafe : ${list}">
-            <p class="fs-4 fw-bold"> <li th:text="'cafe'+ ${cafe.id}"></li>:</p><br>
-            <p class="fs-6"><li th:text="'rate : '+ ${cafe.rate}"></li></p>
-            <p class="fs-6"><li th:text="'location : '+ ${cafe.location}"></li></p>
+        <th:block th:each="Cafe : ${list}">
+          __________________________________________________________________________________________________
+        <p class="fs-4 fw-bold"> <li th:text="'CAFE' + ${Cafe.id}"> </li></p>
+          <p class="fs-6"> <li th:text="'name : ' + ${Cafe.name}"> </li></p>
+        <p class="fs-6"> <li th:text="'rate : ' + ${Cafe.rate}"> </li></p>
+        <p class="fs-6"> <li th:text="'location : ' + ${Cafe.address}"></li></p> <br>
         </th:block>
+
+
 
       </ul>
       <br></br>
