@@ -28,23 +28,25 @@
 
 ### Main Page
 
-<img src = "./img/main.PNG" width="600" height="370">
+<img src = "./img/main.png" width="600" height="370">
 <br>
 
 ### 추천 카페 리스트
 
-- 자체 추천 알고리즘을 사용하여 공부하기 좋은 카페 리스트를 보여준다.
-  <img src = "./img/recommend.PNG" width="600" height="370">
+- 자체 추천 알고리즘을 사용하여 공부하기 좋은 카페 리스트를 보여준다.  
+
+  <img src = "./img/recommend.png" width="600" height="370">
 
 <br>
 
 ### 좋아하는 카페와 비슷한 카페 찾기
 
-- 좋아하는 카페를 고르면 그와 비슷한 리뷰가 많은 카페 리스트를 보여준다
-  <img src = "./img/similar.PNG" width="600" height="370">
+- 좋아하는 카페를 고르면 그와 비슷한 리뷰가 많은 카페 리스트를 보여준다  
+
+  <img src = "./img/similar.png" width="600" height="370">
 
 <br>
 
 ### 스터디 카페 리스트
 
-<img src = "./img/study.PNG" width="600" height="370">
+<img src = "./img/study.png" width="600" height="370">
